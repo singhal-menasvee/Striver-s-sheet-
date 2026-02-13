@@ -4,15 +4,31 @@ public class GCD {
         Scanner sc= new Scanner(System.in);
         int N1= sc.nextInt();
         int N2=sc.nextInt();
+        //brute force
+        // int gcd=1;
+        // int min= Math.min(N1, N2);
+        // for(int i=1;i<=min;i++){
+        //     if(N1%i==0 && N2%i==0){
+        //         gcd=i;
+        //     }
+        // }
+        // System.out.println(gcd);
 
+        //optimal: iterate from min(n1,n2) to 1
         int gcd=1;
-        int min= Math.min(N1, N2);
-        for(int i=1;i<=min;i++){
+        int min=Math.min(N1,N2);
+        for(int i=min;i>=1;i--){
             if(N1%i==0 && N2%i==0){
                 gcd=i;
+                System.out.println(gcd);
+                break;
             }
+            
+            
+
         }
-        System.out.println(gcd);
+        
+        
 
         
     }
